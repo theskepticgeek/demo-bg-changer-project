@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+      transition: background-color 0.5s ease;
+    }
+    .container {
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Type a Color to Change Background</h1>
+    <input type="text" id="colorInput" placeholder="Enter a color (e.g., red, #ff0000)">
+    <p class="error" id="error"></p>
+  </div>
+
+  <script>
+    const input = document.getElementById('colorInput');
+    const error = document.getElementById('error');
+
+    input.addEventListener('input', () => {
+      const color = input.value.trim();
+      try {
+        // Test if the color is valid
+        document.body.style.backgroundColor = color;
+        error.textContent = ''; // Clear any error message
+      } catch {
+        error.textContent = 'Invalid color name or code!';
+      }
+    });
+  </script>
+</body>
+</html>
