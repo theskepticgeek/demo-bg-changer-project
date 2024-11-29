@@ -48,9 +48,9 @@
     input.addEventListener('input', () => {
       const color = input.value.trim();
       try {
-        // Test if the color is valid
+        
         document.body.style.backgroundColor = color;
-        error.textContent = ''; // Clear any error message
+        error.textContent = ''; 
       } catch {
         error.textContent = 'Invalid color name or code!';
       }
